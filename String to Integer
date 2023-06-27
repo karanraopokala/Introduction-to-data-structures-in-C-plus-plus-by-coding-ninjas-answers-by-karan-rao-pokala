@@ -1,0 +1,13 @@
+#include <cstring>
+int stringToNumber(char input[])
+{
+    // Write your code here
+    static int sum = 0;
+    int l = strlen(input);
+    sum = sum * 10 + (input[0] - 48);
+    if (input[1] != '\0')
+        stringToNumber(input + 1);
+    else
+        return sum;
+}
+
