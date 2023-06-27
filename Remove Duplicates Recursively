@@ -1,0 +1,26 @@
+#include <cstring>
+void removeConsecutiveDuplicates(char *input)
+{
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * Change in the given string itself.
+     * No need to return or print anything
+     * Taking input and printing output is handled automatically.
+     */
+    int l = strlen(input);
+    if (input[1] != '\0')
+    {
+        int i;
+        for (i = 1; i < l; i++)
+            if (input[i] != input[0])
+                break;
+        for (int j = 1; j < l; j++)
+            input[j] = input[j + i - 1];
+        if (input[1] != '\0')
+            removeConsecutiveDuplicates(input + 1);
+        else
+            return;
+    }
+    else
+        return;
+}
