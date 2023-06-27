@@ -1,0 +1,6 @@
+#include <numeric>
+int findDuplicate(int *arr, int n)
+{
+    // Write your code here
+    return accumulate(arr, arr + n, 0) - (n - 2) * (n - 1) / 2;
+}
