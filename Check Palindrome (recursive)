@@ -1,0 +1,16 @@
+#include <cstring>
+bool checkPalindrome(char input[])
+{
+    // Write your code here
+    static int i = 0;
+    int l = strlen(input);
+    if (i == l)
+        return true;
+    if (input[i] == input[l - i - 1])
+    {
+        i++;
+        checkPalindrome(input);
+    }
+    else
+        return false;
+}
